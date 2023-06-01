@@ -1,21 +1,25 @@
-class Mahasiswa:
-    def __init__(self, nama, nim, jurusan):
-        self.nama = nama   
-        # Inisialisasi atribut 'nama' dengan nilai yang diberikan saat objek dibuat
-        self.nim = nim     
-        # Inisialisasi atribut 'nim' dengan nilai yang diberikan saat objek dibuat
-        self.jurusan = jurusan   
-        # Inisialisasi atribut 'jurusan' dengan nilai yang diberikan saat objek dibuat
+class Universitas:
+    def __init__(self, nama_universitas):
+        self.nama_universitas = nama_universitas   
+        # Inisialisasi atribut 'nama_universitas' dengan nilai yang diberikan saat objek dibuat
+        self.daftar_jurusan = []  
+        # Inisialisasi atribut 'daftar_jurusan' sebagai list kosong
 
-    def tampilkan_info(self):
-        print("Nama:", self.nama)    
-        # Menampilkan nilai atribut 'nama' dari objek
-        print("NIM:", self.nim)      
-        # Menampilkan nilai atribut 'nim' dari objek
-        print("Jurusan:", self.jurusan.nama_jurusan)  
-        # Menampilkan nilai atribut 'nama_jurusan' dari objek 'jurusan'
+    def tambah_jurusan(self, jurusan):
+        self.daftar_jurusan.append(jurusan)   
+        # Menambahkan objek 'jurusan' ke dalam list 'daftar_jurusan'
 
-
+    def tampilkan_daftar_jurusan(self):
+        print("Daftar Jurusan di", self.nama_universitas)   
+        # Menampilkan nama universitas
+        if self.daftar_jurusan:   # Cek apakah list 'daftar_jurusan' tidak kosong
+            for jurusan in self.daftar_jurusan:  
+                # Iterasi melalui setiap objek jurusan dalam list
+                print("- ", jurusan.nama_jurusan)   
+                # Menampilkan nama setiap jurusan
+        else:
+            print("Belum ada jurusan terdaftar.")   
+            # Menampilkan pesan jika list 'daftar_jurusan' kosong
 class Jurusan:
     def __init__(self, nama_jurusan):
         self.nama_jurusan = nama_jurusan   
@@ -39,32 +43,23 @@ class Jurusan:
         else:
             print("Belum ada mahasiswa terdaftar.")   
             # Menampilkan pesan jika list 'daftar_mahasiswa' kosong
+            
+class Mahasiswa:
+    def __init__(self, nama, nim, jurusan):
+        self.nama = nama   
+        # Inisialisasi atribut 'nama' dengan nilai yang diberikan saat objek dibuat
+        self.nim = nim     
+        # Inisialisasi atribut 'nim' dengan nilai yang diberikan saat objek dibuat
+        self.jurusan = jurusan   
+        # Inisialisasi atribut 'jurusan' dengan nilai yang diberikan saat objek dibuat
 
-
-class Universitas:
-    def __init__(self, nama_universitas):
-        self.nama_universitas = nama_universitas   
-        # Inisialisasi atribut 'nama_universitas' dengan nilai yang diberikan saat objek dibuat
-        self.daftar_jurusan = []  
-        # Inisialisasi atribut 'daftar_jurusan' sebagai list kosong
-
-    def tambah_jurusan(self, jurusan):
-        self.daftar_jurusan.append(jurusan)   
-        # Menambahkan objek 'jurusan' ke dalam list 'daftar_jurusan'
-
-    def tampilkan_daftar_jurusan(self):
-        print("Daftar Jurusan di", self.nama_universitas)   
-        # Menampilkan nama universitas
-        if self.daftar_jurusan:   # Cek apakah list 'daftar_jurusan' tidak kosong
-            for jurusan in self.daftar_jurusan:  
-                # Iterasi melalui setiap objek jurusan dalam list
-                print("- ", jurusan.nama_jurusan)   
-                # Menampilkan nama setiap jurusan
-        else:
-            print("Belum ada jurusan terdaftar.")   
-            # Menampilkan pesan jika list 'daftar_jurusan' kosong
-
-
+    def tampilkan_info(self):
+        print("Nama:", self.nama)    
+        # Menampilkan nilai atribut 'nama' dari objek
+        print("NIM:", self.nim)      
+        # Menampilkan nilai atribut 'nim' dari objek
+        print("Jurusan:", self.jurusan.nama_jurusan)  
+        # Menampilkan nilai atribut 'nama_jurusan' dari objek 'jurusan'
 
 universitas_xyz = Universitas("University of XYZ")   
 # Membuat objek 'universitas_xyz' dengan nama "University of XYZ"
